@@ -1,0 +1,5 @@
+{
+    "transform": {},
+    "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": ["<rootDir>/resources"]
+}
