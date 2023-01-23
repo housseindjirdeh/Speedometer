@@ -234,7 +234,7 @@ export class BenchmarkRunner {
                     this._measuredValues.tests[suite.name] = suiteResults;
                     suiteResults.tests[test.name] = {tests: {'Sync': syncTime, 'Async': asyncTime}, total: total};
                     suiteResults.total += total;
-
+                    
                     if (this._client && this._client.didRunTest)
                         this._client.didRunTest(suite, test);
 
@@ -274,6 +274,7 @@ export class BenchmarkRunner {
     async _finalize()
     {
         if (this._client && this._client.didRunSuites) {
+            console.log(this._measuredValues.tests)
             let product = 1;
             const values = [];
             for (const suiteName in this._measuredValues.tests) {
